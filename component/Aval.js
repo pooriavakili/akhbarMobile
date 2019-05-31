@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
 import {View,ScrollView,TouchableOpacity,Text,Linking,TouchableWithoutFeedback,ImageBackground} from 'react-native'
 import {Header,} from 'native-base'
+import Data from './Data'
 export default class Aval extends Component {
+    openLink=url=>{
+        const baseUrl="https://akhbarsaderaty.liara.run/";
+        Linking.openURL(baseUrl+url);
+    }
+
     Tashil=()=>{
         Linking.openURL('https://akhbarsaderaty.liara.run/tashil')
     }
@@ -96,10 +102,29 @@ export default class Aval extends Component {
 
         return (
             <ScrollView
-
+                style={{
+                    flex:1,
+                    alignSelf: "stretch"
+                }}
                 showsVerticalScrollIndicator={false}
-
             >
+
+
+                {Data.map((item,index)=>(
+                    <TouchableOpacity
+                        key={item.id}
+                    style={{
+                    flex:1,
+                        alignItems: "center",
+                        justifyContent: "center",
+                        alignSelf:"stretch",
+                        marginTop: index==0?30:0,
+                        marginBottom: index==Data.length?0:30,
+                        marginHorizontal: 15
+                    }}
+                  onPress={this.openLink}
+                    >
+
 
                     <Header style={{
                         backgroundColor:"red"
@@ -110,7 +135,7 @@ export default class Aval extends Component {
                                 top:15,
                                 fontSize:20
                             }}
-                        >اخبار صادرتی</Text>
+                        >{item.text}</Text>
 
                     </Header>
 
@@ -119,18 +144,25 @@ export default class Aval extends Component {
 
                                         <TouchableWithoutFeedback
                                             onPress={this.Tashil}
+                                         
                                         >
 
                                             <ImageBackground
-                                                source={require('./../img/57877896.jpg')}
+                                              
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:20
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:20
                                                 }}
                                             >
                                                 <Text
+                                                    key={item.id}
                                                     style={{
                                                         right:170,
                                                         top:20,
@@ -138,8 +170,7 @@ export default class Aval extends Component {
                                                         fontSize:20
                                                     }}
                                                 >
-                                                    ارتباط بین صادرکننده و واردکننده تسهیل شود
-
+                                                    {item.text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -147,15 +178,21 @@ export default class Aval extends Component {
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.ArzSadaraty}
                                         >
 
-                                            <ImageBackground source={require('./../img/57340470.jpg')}
+                                            <ImageBackground source={item.image}
+
                                                              style={{
                                                                  width: 150,
                                                                  height:150,
-                                                                 left:215,
-                                                                 top:40
+                                                                 flex:1,
+                                                                 alignItems:"center",
+                                                                 justifyContent:"center",
+                                                                 alignSelf:"stretch",
+
+                                                                 paddingVertical:40
                                                              }}
 
                                             >
@@ -168,23 +205,28 @@ export default class Aval extends Component {
                                                         fontSize:20
                                                     }}
                                                 >
-                                                    قوه قضائیه با کسانی که ارز صادراتی را به کشور بر نگرداند برخورد کند
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
 
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Sazman}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57881243.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:60
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:60
                                                 }}
                                             >
                                                 <Text
@@ -196,22 +238,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    رشد 52 درصدی صادرات کالاهای غیرنفتی از گمرکات آذربایجان شرقی
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Khoshmaze}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57834989.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:80
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:80
                                                 }}
                                             >
                                                 <Text
@@ -223,8 +270,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    محصولاتی خوشمزه‌ اما بدون بسته‌بندی شیک صادراتی
-
+                                                    {item.text}
 
                                                 </Text>
                                             </ImageBackground>
@@ -232,15 +278,21 @@ export default class Aval extends Component {
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Bazargany}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57820588.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:100
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:100
                                                 }}
                                             >
                                                 <Text
@@ -252,23 +304,28 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    اصلی‌ترین کالاهای صادراتی ایران کدامند؟
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Rizesh}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57661387.jpg')}
+
+                                                source={item.image}
 
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:120
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:120
                                                 }}
                                             >
                                                 <Text
@@ -280,8 +337,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    ریزش واردات و صادرات غیرنفتی
-
+                                                    {item.text}
                                                 </Text>
 
 
@@ -289,15 +345,21 @@ export default class Aval extends Component {
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Sharayet}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57836424.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:140
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:140
                                                 }}
                                             >
                                                 <Text
@@ -309,24 +371,29 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    شرایط صادرات محصولات فلزی + اسامی شرکت‌های مجاز
-
+                                                    {item.text}
                                                 </Text>
 
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Gerany}
 
                                         >
                                             <ImageBackground
-                                                source={require('./../img/9-811-th2.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:160
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:160
                                                 }}
                                             >
                                                 <Text
@@ -338,22 +405,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    گرانی مسکن ساکنان تهران را فراری داد
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Kham}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57779724.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:180
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:180
                                                 }}
                                             >
                                                 <Text
@@ -365,23 +437,28 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    صادرات گوجه‌فرنگی نوعی "خام‌فروشی" است
-
+                                                    {item.text}
                                                 </Text>
 
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this. Barnagsht}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57385681.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:200
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:200
                                                 }}
                                             >
 
@@ -394,22 +471,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    ۳۰ میلیارد دلار ارز صادراتی از هیچ طریقی به کشور برنگشته است
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+                                            key={item.id}
                                             onPress={this.Angour}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57874241.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:220
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:220
                                                 }}
                                             >
 
@@ -422,22 +504,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    تلاش ۲۰ ساله محققان دانشگاه تهران در تولید ۸ رقم انگور بی‌دانه حبه درشت صادراتی
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+                                            key={item.id}
                                             onPress={this.Govat}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57743891.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:240
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:240
                                                 }}
                                             >
                                                 <Text
@@ -449,23 +536,28 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    نقاط قوت و ضعف دستورالعمل جدید ارزی بانک مرکزی
-
+                                                    {item.text}
                                                 </Text>
 
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Zarfiat}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57614499.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:260
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:260
                                                 }}
                                             >
                                                 <Text
@@ -477,22 +569,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    ظرفیت صادرات ۷۰۰ میلیون دلاری لوازم خانگی در سال ۹۸
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Lir}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57877255.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:280
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:280
                                                 }}
                                             >
                                                 <Text
@@ -504,8 +601,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    لبخند«لیر» و چشمک استانبول به ایرانی‌ها
-
+                                                    {item.text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -513,15 +609,22 @@ export default class Aval extends Component {
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
+
                                             onPress={this.Elam}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/577878.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:300
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:300
                                                 }}
                                             >
                                                 <Text
@@ -533,22 +636,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    آمار صادرات و واردات در فروردین ماه اعلام شد
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Zanan}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57419853.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:320
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:320
                                                 }}
                                             >
 
@@ -561,8 +669,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    کاهش سهم زنان در مشاغل و پست‌های مدیریتی
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
 
@@ -570,16 +677,22 @@ export default class Aval extends Component {
 
 
                                         <TouchableWithoutFeedback
+                                            key={item.id}
                                             onPress={this.Pure}
                                         >
                                             <ImageBackground
+
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:340
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:340
                                                 }}
-                                                source={require('./../img/57300672.jpg')}
+                                                source={item.image}
                                             >
                                                 <Text
                                                     style={{
@@ -590,22 +703,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    دلارهایی که برای پوره و گربه می‌رود!
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Kordestan}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57805776.jpg')}
+                                                key={item.id}
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:360
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:360
                                                 }}
                                             >
 
@@ -618,23 +736,28 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    صادرات ۱۲۰ هزار دلاری محصولات پارک فناوری کردستان در سال گذشته
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
 
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Kahesh}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57820588.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:380
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:380
                                                 }}
                                             >
                                                 <Text
@@ -646,23 +769,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    صادرات و واردات ایران با کاهش قیمت آغاز شد
-
+                                                    {item.text}
                                                 </Text>
 
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Daramad}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57875990.jpg')}
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:400
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:400
                                                 }}
                                             >
 
@@ -675,22 +802,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    بهترین جایگزین درآمدهای نفتی
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Pay}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57597271.jpg')}
+                                                key={item.id}
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:420
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:420
                                                 }}
                                             >
                                                 <Text
@@ -702,8 +834,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    دولت ارز می‌دهد پای نظارتش هم بایستد!
-
+                                                    {item.text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -711,14 +842,21 @@ export default class Aval extends Component {
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Bast}
                                         >
-                                            <ImageBackground source={require('./../img/57842869.jpg')}
+                                            <ImageBackground
+
+                                                source={item.image}
                                                              style={{
                                                                  width: 150,
                                                                  height:150,
-                                                                 left:215,
-                                                                 top:440
+                                                                 flex:1,
+                                                                 alignItems:"center",
+                                                                 justifyContent:"center",
+                                                                 alignSelf:"stretch",
+
+                                                                 paddingVertical:440
                                                              }}
                                             >
                                                 <Text
@@ -730,23 +868,28 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    آمریکا چشمانش را روی رابطه برقی و گازی ایران و عراق بست
-
+                                                    {item.text}
                                                 </Text>
 
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Keshvar}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57809326.jpg')}
+                                                key={item.id}
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:460
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:460
                                                 }}
                                             >
                                                 <Text
@@ -758,22 +901,27 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    دریافت عوارض بر صادرات در برخی گمرک‌های کشور!
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Farsh}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57814997.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:480
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:480
                                                 }}
                                             >
 
@@ -787,8 +935,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    صادرات ۱.۵ میلیون یورویی فرش‌های نانویی ایران به ۲۵ کشور
-
+                                                    {item.text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -797,15 +944,21 @@ export default class Aval extends Component {
 
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Roshed}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57343883.jpg')}
+                                                key={item.id}
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:500
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:500
                                                 }}
                                             >
                                                 <Text
@@ -817,8 +970,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    رشد ۶۰ درصدی صادرات اتصالات نانویی یکی از شرکت‌های دانش‌بنیان
-
+                                                  {item.text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -826,15 +978,21 @@ export default class Aval extends Component {
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Naft}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57324240.jpg')}
+                                                key={item.id}
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:520
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:520
                                                 }}
                                             >
 
@@ -847,23 +1005,28 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    جوانان ثروت واقعی کشور هستند؛ نه نفت!
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
+
                                             onPress={this.Piyaz}
 
                                         >
                                             <ImageBackground
-                                                source={require('./../img/575881631.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:540
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:540
                                                 }}
                                             >
                                                 <Text
@@ -875,8 +1038,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    ممنوعیت صادرات پیاز و سیب‌زمینی لغو شد
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -885,12 +1047,17 @@ export default class Aval extends Component {
                                             onPress={this.Farvardin}
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57820588.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:560
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:560
                                                 }}
                                             >
                                                 <Text
@@ -903,22 +1070,27 @@ export default class Aval extends Component {
                                                     }}
 
                                                 >
-                                                    تراز تجاری فروردین مثبت ماند
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
                                             onPress={this.Khorma}
+
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57613489.jpg')}
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:560
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:580
                                                 }}
                                             >
 
@@ -932,8 +1104,7 @@ export default class Aval extends Component {
                                                     }}
 
                                                 >
-                                                    نیکزادی‌پناه: از صادرات خرما جلوگیری نشود
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -941,14 +1112,21 @@ export default class Aval extends Component {
 
                                         <TouchableWithoutFeedback
                                             onPress={this.Nima}
+
                                         >
                                             <ImageBackground
-                                                source={require('./../img/57876548.jpg')}
+
+
+                                                source={item.image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    left:215,
-                                                    top:580
+                                                    flex:1,
+                                                    alignItems:"center",
+                                                    justifyContent:"center",
+                                                    alignSelf:"stretch",
+
+                                                    paddingVertical:600
                                                 }}
                                             >
                                                 <Text
@@ -961,8 +1139,7 @@ export default class Aval extends Component {
                                                     }}
 
                                                 >
-                                                    بازی دو سر سود صادرکنندگان با دلارهای نیما
-
+                                                    {item.text}
                                                 </Text>
                                             </ImageBackground>
 
@@ -970,12 +1147,13 @@ export default class Aval extends Component {
 
                                         <TouchableWithoutFeedback
 
+
                                             onPress={()=>{
                                                 this.props.navigation.navigate('dovom')
                                             }}
 
                                         >
-                                            <Text>2</Text>
+                                            <Text>{item.text}</Text>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
@@ -985,16 +1163,17 @@ export default class Aval extends Component {
                                             }}
 
                                         >
-                                            <Text>3</Text>
+                                            <Text>{item.text}</Text>
 
                                         </TouchableWithoutFeedback>
 
 
+
+
+                    </TouchableOpacity>
+                ))}
+
             </ScrollView>
-
-
-
-
 
         );
     }
