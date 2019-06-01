@@ -3,6 +3,11 @@ import {View,ScrollView,TouchableOpacity,Text,Linking,TouchableWithoutFeedback,I
 import {Header,} from 'native-base'
 import Data from './Data'
 export default class Aval extends Component {
+
+
+
+
+
     openLink=url=>{
         const baseUrl="https://akhbarsaderaty.liara.run/";
         Linking.openURL(baseUrl+url);
@@ -112,57 +117,58 @@ export default class Aval extends Component {
 
                 {Data.map((item,index)=>(
                     <TouchableOpacity
-                        key={item.id}
+
                     style={{
                     flex:1,
                         alignItems: "center",
                         justifyContent: "center",
                         alignSelf:"stretch",
-                        marginTop: index==0?30:0,
-                        marginBottom: index==Data.length?0:30,
+
                         marginHorizontal: 15
                     }}
                   onPress={this.openLink}
                     >
 
-
+                    <TouchableWithoutFeedback>
                     <Header style={{
-                        backgroundColor:"red"
+                        backgroundColor:"red",
+                        alignSelf:"stretch"
                     }}>
                         <Text
+
                             style={{
                                 color:"white",
                                 top:15,
                                 fontSize:20
                             }}
-                        >{item.text}</Text>
+                        >{Data[32].text}
+                        </Text>
 
                     </Header>
 
+                    </TouchableWithoutFeedback>
 
 
 
                                         <TouchableWithoutFeedback
                                             onPress={this.Tashil}
-                                         
+
                                         >
 
                                             <ImageBackground
-                                              
-                                                source={item.image}
+
+                                                source={Data[0].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
+                                                    top:20,
 
-                                                    paddingVertical:20
+                                                   left:100
                                                 }}
                                             >
                                                 <Text
-                                                    key={item.id}
+
                                                     style={{
                                                         right:170,
                                                         top:20,
@@ -170,7 +176,7 @@ export default class Aval extends Component {
                                                         fontSize:20
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[0].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -182,21 +188,19 @@ export default class Aval extends Component {
                                             onPress={this.ArzSadaraty}
                                         >
 
-                                            <ImageBackground source={item.image}
+                                            <ImageBackground source={Data[1].image}
 
                                                              style={{
                                                                  width: 150,
                                                                  height:150,
                                                                  flex:1,
-                                                                 alignItems:"center",
-                                                                 justifyContent:"center",
-                                                                 alignSelf:"stretch",
-
-                                                                 paddingVertical:40
+                                                                 left:100,
+                                                                top:40
                                                              }}
 
                                             >
                                                 <Text
+
                                                     style={{
                                                         right:170,
 
@@ -205,7 +209,7 @@ export default class Aval extends Component {
                                                         fontSize:20
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[1].text}
                                                 </Text>
                                             </ImageBackground>
 
@@ -217,16 +221,15 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[2].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
+                                                    left:100,
+                                                    top:60
 
-                                                    paddingVertical:60
+
                                                 }}
                                             >
                                                 <Text
@@ -238,7 +241,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[2].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -249,16 +252,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[3].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:80
+                                                    left:100,
+                                                    top:80
                                                 }}
                                             >
                                                 <Text
@@ -270,7 +271,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[3].text}
 
                                                 </Text>
                                             </ImageBackground>
@@ -283,16 +284,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[4].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:100
+                                                    left:100,
+                                                    top:100
                                                 }}
                                             >
                                                 <Text
@@ -304,7 +303,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[4].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -315,17 +314,15 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[5].image}
 
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:120
+                                                    left:100,
+                                                    top:120
                                                 }}
                                             >
                                                 <Text
@@ -337,7 +334,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[5].text}
                                                 </Text>
 
 
@@ -350,16 +347,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[6].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:140
+                                                    left:100,
+                                                    top:140
                                                 }}
                                             >
                                                 <Text
@@ -371,7 +366,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[6].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -384,16 +379,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[7].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:160
+                                                    left:100,
+                                                    top:160
                                                 }}
                                             >
                                                 <Text
@@ -405,7 +398,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[7].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -416,16 +409,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[8].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:180
+                                                    left:100,
+                                                    top:180
                                                 }}
                                             >
                                                 <Text
@@ -437,7 +428,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[8].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -449,16 +440,13 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[9].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:200
+                                                    left:100,
+                                                    top:200
                                                 }}
                                             >
 
@@ -471,7 +459,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[9].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -482,16 +470,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[10].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:220
+                                                    left:100,
+                                                    top:210
                                                 }}
                                             >
 
@@ -504,7 +490,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[10].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -515,16 +501,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[11].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:240
+                                                    left:100,
+                                                    top:220
                                                 }}
                                             >
                                                 <Text
@@ -536,7 +520,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[11].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -548,16 +532,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[12].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:260
+                                                    left:100,
+                                                    top:240
                                                 }}
                                             >
                                                 <Text
@@ -569,7 +551,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[12].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -580,16 +562,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[13].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:280
+                                                    left:100,
+                                                    top:260
                                                 }}
                                             >
                                                 <Text
@@ -601,7 +581,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[13].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -615,16 +595,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[14].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:300
+                                                    left:100,
+                                                    top:280
                                                 }}
                                             >
                                                 <Text
@@ -636,7 +614,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[14].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -647,16 +625,14 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[15].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
-                                                    flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
 
-                                                    paddingVertical:320
+                                                    flex:1,
+                                                    left:100,
+                                                    top:300
                                                 }}
                                             >
 
@@ -669,7 +645,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[15].text}
                                                 </Text>
                                             </ImageBackground>
 
@@ -677,7 +653,7 @@ export default class Aval extends Component {
 
 
                                         <TouchableWithoutFeedback
-                                            key={item.id}
+
                                             onPress={this.Pure}
                                         >
                                             <ImageBackground
@@ -686,13 +662,10 @@ export default class Aval extends Component {
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:340
+                                                    left:100,
+                                                    top:320
                                                 }}
-                                                source={item.image}
+                                                source={Data[16].image}
                                             >
                                                 <Text
                                                     style={{
@@ -703,7 +676,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[16].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -713,17 +686,14 @@ export default class Aval extends Component {
                                             onPress={this.Kordestan}
                                         >
                                             <ImageBackground
-                                                key={item.id}
-                                                source={item.image}
+
+                                                source={Data[17].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:360
+                                                    left:100,
+                                                    top:340
                                                 }}
                                             >
 
@@ -736,7 +706,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[17].text}
                                                 </Text>
                                             </ImageBackground>
 
@@ -748,16 +718,13 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[18].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:380
+                                                    left:100,
+                                                    top:360
                                                 }}
                                             >
                                                 <Text
@@ -769,7 +736,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[18].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -780,16 +747,13 @@ export default class Aval extends Component {
                                             onPress={this.Daramad}
                                         >
                                             <ImageBackground
-                                                source={item.image}
+                                                source={Data[19].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:400
+                                                    left:100,
+                                                    top:380
                                                 }}
                                             >
 
@@ -802,7 +766,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[19].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -812,17 +776,14 @@ export default class Aval extends Component {
                                             onPress={this.Pay}
                                         >
                                             <ImageBackground
-                                                key={item.id}
-                                                source={item.image}
+
+                                                source={Data[20].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:420
+                                                    left:100,
+                                                    top:400
                                                 }}
                                             >
                                                 <Text
@@ -834,7 +795,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[20].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -847,16 +808,13 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[21].image}
                                                              style={{
                                                                  width: 150,
                                                                  height:150,
                                                                  flex:1,
-                                                                 alignItems:"center",
-                                                                 justifyContent:"center",
-                                                                 alignSelf:"stretch",
-
-                                                                 paddingVertical:440
+                                                                 left:100,
+                                                                 top:420
                                                              }}
                                             >
                                                 <Text
@@ -868,7 +826,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[21].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -879,17 +837,14 @@ export default class Aval extends Component {
                                             onPress={this.Keshvar}
                                         >
                                             <ImageBackground
-                                                key={item.id}
-                                                source={item.image}
+
+                                                source={Data[22].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:460
+                                                    left:100,
+                                                    top:440
                                                 }}
                                             >
                                                 <Text
@@ -901,7 +856,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[22].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -912,16 +867,13 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[23].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:480
+                                                    left:100,
+                                                    top:460
                                                 }}
                                             >
 
@@ -935,7 +887,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[23].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -948,17 +900,14 @@ export default class Aval extends Component {
                                             onPress={this.Roshed}
                                         >
                                             <ImageBackground
-                                                key={item.id}
-                                                source={item.image}
+
+                                                source={Data[24].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:500
+                                                    left:100,
+                                                    top:480
                                                 }}
                                             >
                                                 <Text
@@ -970,7 +919,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                  {item.text}
+                                                  {Data[24].text}
                                                 </Text>
 
                                             </ImageBackground>
@@ -982,17 +931,14 @@ export default class Aval extends Component {
                                             onPress={this.Naft}
                                         >
                                             <ImageBackground
-                                                key={item.id}
-                                                source={item.image}
+
+                                                source={Data[25].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:520
+                                                    left:100,
+                                                    top:500
                                                 }}
                                             >
 
@@ -1005,7 +951,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[25].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -1017,16 +963,13 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[26].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:540
+                                                    left:100,
+                                                    top:520
                                                 }}
                                             >
                                                 <Text
@@ -1038,7 +981,7 @@ export default class Aval extends Component {
 
                                                     }}
                                                 >
-                                                    {item.text}
+                                                    {Data[26].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -1048,16 +991,13 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[27].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:560
+                                                    left:100,
+                                                    top:540
                                                 }}
                                             >
                                                 <Text
@@ -1070,7 +1010,7 @@ export default class Aval extends Component {
                                                     }}
 
                                                 >
-                                                    {item.text}
+                                                    {Data[27].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -1081,16 +1021,13 @@ export default class Aval extends Component {
                                         >
                                             <ImageBackground
 
-                                                source={item.image}
+                                                source={Data[28].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:580
+                                                    left:100,
+                                                    top:560
                                                 }}
                                             >
 
@@ -1104,7 +1041,7 @@ export default class Aval extends Component {
                                                     }}
 
                                                 >
-                                                    {item.text}
+                                                    {Data[28].text}
                                                 </Text>
                                             </ImageBackground>
                                         </TouchableWithoutFeedback>
@@ -1117,16 +1054,13 @@ export default class Aval extends Component {
                                             <ImageBackground
 
 
-                                                source={item.image}
+                                                source={Data[29].image}
                                                 style={{
                                                     width: 150,
                                                     height:150,
                                                     flex:1,
-                                                    alignItems:"center",
-                                                    justifyContent:"center",
-                                                    alignSelf:"stretch",
-
-                                                    paddingVertical:600
+                                                    left:100,
+                                                    top:580
                                                 }}
                                             >
                                                 <Text
@@ -1139,7 +1073,7 @@ export default class Aval extends Component {
                                                     }}
 
                                                 >
-                                                    {item.text}
+                                                    {Data[29].text}
                                                 </Text>
                                             </ImageBackground>
 
@@ -1153,7 +1087,7 @@ export default class Aval extends Component {
                                             }}
 
                                         >
-                                            <Text>{item.text}</Text>
+                                            <Text>{Data[30].text}</Text>
                                         </TouchableWithoutFeedback>
 
                                         <TouchableWithoutFeedback
@@ -1163,7 +1097,7 @@ export default class Aval extends Component {
                                             }}
 
                                         >
-                                            <Text>{item.text}</Text>
+                                            <Text>{Data[31].text}</Text>
 
                                         </TouchableWithoutFeedback>
 
